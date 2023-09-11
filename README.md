@@ -1,4 +1,4 @@
-# Boilerplate for development using Docker instances running Django and Postgres
+# Boilerplate for development using Docker, Django, and Postgres
 
 This is a simple boilerplate so I can start developing Django apps skipping the configuration part.
 
