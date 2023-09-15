@@ -41,6 +41,8 @@ After cloning the repository, go to the root folder (the one that contains `dock
 
 - Check the logs with `docker compose logs -f`.
 
+**REMEMBER TO CHOWN!** I learned this the hard way. You need to go to `../root_folder` and type `chown -R ${YOUR_USER} /root_folder`, otherwise the files might not update automatically and this will all be a waste of time. I learned it the hard way.
+
 ## If anything doesn't work:
 
 Keep in mind this works perfectly in september of 2023. I literally just tested everything. However, assuming you're trying to use this 5 years from now, something might break. Check the logs for any errors.
