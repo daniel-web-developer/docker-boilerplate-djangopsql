@@ -15,6 +15,8 @@ You'll probably want to change the following files:
 - app/Dockerfile (change the Python image's version used. I still recommend using Alpine Linux (the -alpine at the end of the image's name specifies this) since it's really lightweight and the following commands in this file are meant specifically for its package manager. You might also wanna change the lines specifying the system dependencies (they start with `RUN apk update`). This might not be necessary and depends whether these containers, with the current configuration, will keep working in the future. Always check the logs in case of errors);
 - .env.dev (you might wanna change this, but I don't recommend it. It's only the development environment and **YOU SHOULDN'T USE IT WHILE ON PRODUCTION ANYWAY**).
 
+**REMEMBER TO `CHOWN`!** I learned this the hard way. You need to go to `../root_folder` and type `chown -R ${YOUR_USER} /root_folder`, otherwise the files might not update automatically and this will all be a waste of time. I learned it the hard way.
+
 ## Running:
 
 **BEFORE ANYTHING: you might need to run each and every docker command as `root` with `sudo`.**
@@ -40,8 +42,6 @@ After cloning the repository, go to the root folder (the one that contains `dock
 **If anything doesn't work:**
 
 - Check the logs with `docker compose logs -f`.
-
-**REMEMBER TO CHOWN!** I learned this the hard way. You need to go to `../root_folder` and type `chown -R ${YOUR_USER} /root_folder`, otherwise the files might not update automatically and this will all be a waste of time. I learned it the hard way.
 
 ## If anything doesn't work:
 
